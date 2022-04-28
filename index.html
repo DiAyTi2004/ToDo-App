@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo App</title>
+</head>
+<link rel="stylesheet" href="./style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<body>
+    <div id="main">
+        <div id="todo">
+            <header class="todo__heading">
+                <h1 class="todo__tit">
+                    ToDo App
+                </h1>
+            </header>
+            <div class="todo__input__wrapper">
+                <input class="todo__input" placeholder="Type something todo..."/>
+                <button class="todo__add">
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+            </div>
+            <ul class="todo__list"></ul>
+            <footer class="todo__foot">
+                <div class="todo__pending">
+                    <h3 class="pending__mess">
+                        You have 
+                        <span class="pending__num"></span>
+                        pending task!
+                    </h3>
+                </div>
+                <button class="todo__clear">
+                    <i class="fa-solid fa-broom"></i>
+                    Clear All
+                </button>
+            </footer>
+        </div>
+    </div>
+    <script src="./app.js"></script>
+</body>
+</html>

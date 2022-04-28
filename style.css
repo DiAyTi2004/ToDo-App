@@ -1,0 +1,172 @@
+* {
+    padding: unset;
+    margin: unset;
+    box-sizing: border-box;
+}
+html {
+    font-family: 'Times New Roman', Times, serif;
+}
+body {
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient( 0deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
+}
+#main {
+   display: flex;
+   width: 100%;
+   height: 100%;
+}
+#todo{
+    background-color: white;
+    margin: auto;
+    border-radius: 4px;
+    transition: all linear 0.2s;
+    padding: 24px 16px;
+}
+.todo__tit{
+    margin-bottom: 8px;
+    font-size: 28px;
+    padding: 0px 16px;
+    text-align: center;
+    transition: all linear 0.2s;
+}
+.todo__tit:hover{
+    color: #3684d8; 
+}
+.todo__input__wrapper{
+    display: flex;
+    margin-top: 4px;
+    align-items: center;
+    justify-content: center;
+}
+.todo__input{
+    padding: 6px 12px;
+    font-size: 16px;
+    border-radius: 4px;
+    border-color: #5fa7f4;
+    width: 280px;
+}
+.todo__input:focus{
+    outline-color: rgb(207, 201, 201);
+}
+.todo__add{
+    background: #5fa7f4;
+    margin-left: 4px;
+    border-radius: 4px;
+    transition: all linear 0.2s;
+    border: none;
+}
+.todo__add:hover{
+    cursor: pointer;
+    background-color: #3684d8;
+    outline: auto;
+    outline-color: #3684d8;
+}
+.todo__add:active{
+    outline-color: white;
+}
+.todo__add i{
+    color: white;
+    font-size: 23px;
+    padding: 6px;
+}
+.todo__list{
+    list-style-type: none;
+    max-height: 320px;
+    overflow: auto;
+    overflow: -moz-scrollbars-none;
+    -ms-overflow-style: none;
+    scroll-behavior: smooth;
+    margin-top: 12px;
+}
+.todo__list::-webkit-scrollbar { 
+    width: 0 !important;
+    display: none; 
+  }
+.todo__item{
+    position: relative;
+    display: flex;
+    padding: 8px 12px;
+    width: 100%;
+    background-color: #f3f2f3;
+    opacity: 0.8;
+    justify-content: space-between;
+    border-radius: 4px;
+    transition: all linear 0.2s;
+}
+.todo__item:hover{
+    opacity: 1;
+}
+.todo__item:hover .todo__delete{
+    display: block;
+}
+.todo__item+ .todo__item{
+    margin-top: 12px;
+}
+.todo__delete{
+    background-color: #e34d3b;
+    position: absolute;
+    padding: 9px 12px;
+    top: 0;
+    right: 0;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    transition: all linear 0.2s;
+    animation: slideIn ease-in 0.2s;
+    display: none;
+    cursor: pointer;
+}
+@keyframes slideIn{
+    from{
+        right: 100%;
+        opacity: 0;
+    }
+    to{
+        right: 0;
+        opacity: 1.2;
+    }
+}
+.todo__delete i{
+    color: white;
+}
+.todo__foot{
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.pending__mess{
+    font-size: 14px;
+    opacity: 0.6;
+}
+.todo__pending:hover .pending__mess{
+    opacity: 1;
+    transition: all linear 0.2s;
+}
+.todo__clear{
+    font-size: 16px;
+    border-radius: 4px;
+    color: white;
+    background-color: #5fa7f4;
+    transition: all linear 0.2s;
+    padding: 8px 12px;
+    border: none;
+}
+.todo__clear:hover{
+    background-color: #3684d8;
+    cursor: pointer;
+}
+.deleteAnimate{
+    text-decoration: line-through;
+    animation: deleteAnimate ease-in 0.2s 1s forwards;
+}
+@keyframes deleteAnimate{
+    from{
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to{
+        opacity: 0;
+        transform: translateX(100%);
+    }
+}
